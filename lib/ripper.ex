@@ -12,7 +12,7 @@ defmodule Ripper do
       :world
 
   """
-  def hello do
+  def request do
     :world
   end
 end
