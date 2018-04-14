@@ -1,11 +1,11 @@
 # Ripper
 Elixir library to handle tcpdump output
 
-# What's Ripper?
+### What's Ripper?
 Ripper is a simple Elixir library to log HTTP packets using tcpdump.
 It's useful when you need to log your requests for forensic monitoring.
 
-# Installation
+### Installation
 
 ```elixir
 defp deps do
@@ -13,7 +13,7 @@ defp deps do
 end
 ```
 
-# Usage
+### Usage
 
 ```elixir
    proc = Ripper.request("80", "my root password")
@@ -21,9 +21,9 @@ end
 
 ```
 
-# Author
+### Author
 
-Farsheed Ashouri
+Farsheed Ashouri / rodmena@me.com
 
 
 
