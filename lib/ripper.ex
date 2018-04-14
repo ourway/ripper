@@ -8,7 +8,7 @@ defmodule Ripper do
 
 
     ## Send request
-        req = Ripper.request("8000", "my password")
+        req = Ripper.request("8000")
 
     ## cURL and make a request and then read the output 
 
@@ -42,15 +42,15 @@ defmodule Ripper do
   end
 
   @doc """
-    spawns a tcpdump process as root ith given password and information
+    spawns a tcpdump process as root with given information
 
   """
 
-  def request(port, password, packet_couent \\ 1, interface \\ :any) do
+  def request(port, packet_couent \\ 1, interface \\ :any) do
     outfile = get_file_path()
 
     cmd =
-      "echo #{password} | sudo -S tcpdump -i #{interface} -nnvttttqSAU -s0 -c#{packet_couent} 'tcp port #{
+      "tcpdump -i #{interface} -nnvttttqSAU -s0 -c#{packet_couent} 'tcp port #{
         port
       } and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 
